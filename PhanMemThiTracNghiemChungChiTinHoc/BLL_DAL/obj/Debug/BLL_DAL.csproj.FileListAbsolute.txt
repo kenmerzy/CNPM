@@ -1,0 +1,5 @@
+E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll
+E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.pdb
+E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.dll
+E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.pdb
+E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll.config

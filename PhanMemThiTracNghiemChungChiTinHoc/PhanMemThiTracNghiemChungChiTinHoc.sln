@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{36E6F612-55C2-4EC9-AC89-801AE0BD2343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_DAL", "BLL_DAL\BLL_DAL.csproj", "{0BAB903D-EBD0-4DBB-8FC1-A8011E9D1321}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36E6F612-55C2-4EC9-AC89-801AE0BD2343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E6F612-55C2-4EC9-AC89-801AE0BD2343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E6F612-55C2-4EC9-AC89-801AE0BD2343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E6F612-55C2-4EC9-AC89-801AE0BD2343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BAB903D-EBD0-4DBB-8FC1-A8011E9D1321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAB903D-EBD0-4DBB-8FC1-A8011E9D1321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAB903D-EBD0-4DBB-8FC1-A8011E9D1321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAB903D-EBD0-4DBB-8FC1-A8011E9D1321}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

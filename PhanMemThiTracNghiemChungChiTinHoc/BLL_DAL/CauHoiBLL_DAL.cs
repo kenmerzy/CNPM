@@ -24,5 +24,50 @@ namespace BLL_DAL
             List<DapAn> daList = dapans.ToList<DapAn>();
             return daList;
         }
+        public DapAn getDapAnDung(int mach)
+        {
+                         DapAn dapans = tnth.DapAns.Where(t => t.MaCH == mach && t.DungSai == true).FirstOrDefault();
+                           return dapans;
+        }
+
+        // Lâm edited
+        public IQueryable loadLoaiTK()
+        {
+            var loaitk = from tk in tnth.PhanQuyens select tk;
+            return loaitk;
+        }
+        public IQueryable loaddotThi()
+        {
+            var loaidt = from d in tnth.DotThis select d;
+            return loaidt;
+        }
+
+        public int saveDangKy(string hovaten,string email,string sdt,string cmnd, string mk,DateTime ngaysinh,string maloaiTK, string maNgayThi)
+        {
+            ThongTinCaNhan tt = new ThongTinCaNhan();
+          
+            tt.HoVaTenTS = hovaten;
+            tt.Email = email;
+            tt.NgaySinh = ngaysinh;
+            tt.SDT = sdt;
+            tt.CMND = cmnd;
+            tt.MatKhau = mk;
+            tt.MaLoaiTK = maloaiTK;
+            tt.MaNgayThi = maNgayThi;
+           
+
+            try
+            {
+                tnth.ThongTinCaNhans.InsertOnSubmit(tt);
+               
+                tnth.SubmitChanges();
+                return 1;
+            }
+            catch { }
+            return 0; 
+
+
+        }
+
     }
 }

@@ -3,3 +3,13 @@ E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\
 E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.dll
 E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.pdb
 E:\CNPM\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+E:\CODE\CongNghePhanMem\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+E:\CODE\CongNghePhanMem\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll
+E:\CODE\CongNghePhanMem\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.pdb
+E:\CODE\CongNghePhanMem\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.dll
+E:\CODE\CongNghePhanMem\PhanMemThiChungChiTinHoc\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.pdb
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.dll
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.pdb
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.pdb

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace GUI
 {
@@ -33,6 +34,36 @@ namespace GUI
             rdBtnDapAn2.Tag = dapAn2;
             rdBtnDapAn3.Tag = dapAn3;
             rdBtnDapAn4.Tag = dapAn4;
+        }
+        public void toMau(string noiDungDA)
+        {
+            foreach (KryptonRadioButton rd in tableLayoutPanel2.Controls)
+            {
+               
+                if (rd.Checked)
+                {
+                    rd.StateNormal.ShortText.Color1 = Color.Red;                                       
+                }
+                //Sai tô đỏ
+                // Đún tô xanh
+                if (rd.Tag.Equals("True"))
+                {
+                    rd.StateNormal.ShortText.Color1 = Color.LimeGreen;
+                }
+
+                rd.AutoCheck = false;
+            }
+        }
+        public bool checkAnswer()
+        {
+             foreach (KryptonRadioButton rd in tableLayoutPanel2.Controls)
+            {
+                 if (rd.Checked && rd.Tag.Equals("True"))
+                 {
+                     return true;
+                 }
+            }
+            return false;
         }
 
     }

@@ -106,6 +106,7 @@ namespace GUI
             lblDiem.Text = diemSo.ToString() + "/"+ soLuongCauHoi.ToString();
             lblTitleDiem.Visible = true;
             lblDiem.Visible = true;
+            btnNopBai.Enabled = false;
 
         }
 

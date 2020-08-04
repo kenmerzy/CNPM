@@ -74,6 +74,8 @@
             this.btnNopBai = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnLamBaiThi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel17 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblTitleDiem = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblDiem = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tabQuanLyCauHoi = new System.Windows.Forms.TabPage();
             this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -125,8 +127,6 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.tabTaiKhoan = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblTitleDiem = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lblDiem = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tabControl1.SuspendLayout();
             this.tabDangKyTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -489,7 +489,7 @@
             // 
             this.cboDotThi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboDotThi.FormattingEnabled = true;
-            this.cboDotThi.Location = new System.Drawing.Point(409, 377);
+            this.cboDotThi.Location = new System.Drawing.Point(409, 378);
             this.cboDotThi.Name = "cboDotThi";
             this.cboDotThi.Size = new System.Drawing.Size(216, 26);
             this.cboDotThi.TabIndex = 6;
@@ -498,7 +498,7 @@
             // 
             this.cboLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboLoaiTK.FormattingEnabled = true;
-            this.cboLoaiTK.Location = new System.Drawing.Point(409, 439);
+            this.cboLoaiTK.Location = new System.Drawing.Point(409, 440);
             this.cboLoaiTK.Name = "cboLoaiTK";
             this.cboLoaiTK.Size = new System.Drawing.Size(216, 26);
             this.cboLoaiTK.TabIndex = 6;
@@ -690,6 +690,28 @@
             this.kryptonLabel17.TabIndex = 2;
             this.kryptonLabel17.Values.Text = "Ngày thi";
             // 
+            // lblTitleDiem
+            // 
+            this.lblTitleDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleDiem.Location = new System.Drawing.Point(108, 236);
+            this.lblTitleDiem.Name = "lblTitleDiem";
+            this.lblTitleDiem.Size = new System.Drawing.Size(61, 28);
+            this.lblTitleDiem.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
+            this.lblTitleDiem.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleDiem.TabIndex = 2;
+            this.lblTitleDiem.Values.Text = "Điểm";
+            // 
+            // lblDiem
+            // 
+            this.lblDiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDiem.Location = new System.Drawing.Point(197, 236);
+            this.lblDiem.Name = "lblDiem";
+            this.lblDiem.Size = new System.Drawing.Size(65, 28);
+            this.lblDiem.StateNormal.ShortText.Color1 = System.Drawing.Color.OrangeRed;
+            this.lblDiem.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiem.TabIndex = 1;
+            this.lblDiem.Values.Text = "10/20";
+            // 
             // tabQuanLyCauHoi
             // 
             this.tabQuanLyCauHoi.Controls.Add(this.kryptonPanel3);
@@ -749,7 +771,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.36437F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.63563F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 369F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 370F));
             this.tableLayoutPanel8.Controls.Add(this.textBox4, 3, 1);
             this.tableLayoutPanel8.Controls.Add(this.textBox3, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.textBox2, 3, 0);
@@ -769,7 +791,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(524, 67);
+            this.textBox4.Location = new System.Drawing.Point(523, 67);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(276, 50);
@@ -780,12 +802,12 @@
             this.textBox3.Location = new System.Drawing.Point(120, 67);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(263, 50);
+            this.textBox3.Size = new System.Drawing.Size(262, 50);
             this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(524, 3);
+            this.textBox2.Location = new System.Drawing.Point(523, 3);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(276, 49);
@@ -812,7 +834,7 @@
             // kryptonLabel10
             // 
             this.kryptonLabel10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabel10.Location = new System.Drawing.Point(417, 20);
+            this.kryptonLabel10.Location = new System.Drawing.Point(416, 20);
             this.kryptonLabel10.Name = "kryptonLabel10";
             this.kryptonLabel10.Size = new System.Drawing.Size(73, 24);
             this.kryptonLabel10.TabIndex = 0;
@@ -821,7 +843,7 @@
             // kryptonLabel11
             // 
             this.kryptonLabel11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabel11.Location = new System.Drawing.Point(417, 84);
+            this.kryptonLabel11.Location = new System.Drawing.Point(416, 84);
             this.kryptonLabel11.Name = "kryptonLabel11";
             this.kryptonLabel11.Size = new System.Drawing.Size(73, 24);
             this.kryptonLabel11.TabIndex = 0;
@@ -832,7 +854,7 @@
             this.textBox1.Location = new System.Drawing.Point(120, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 49);
+            this.textBox1.Size = new System.Drawing.Size(262, 49);
             this.textBox1.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -987,7 +1009,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.36437F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.63563F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 369F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 370F));
             this.tableLayoutPanel12.Controls.Add(this.textBox7, 1, 1);
             this.tableLayoutPanel12.Controls.Add(this.textBox8, 3, 0);
             this.tableLayoutPanel12.Controls.Add(this.kryptonLabel12, 0, 0);
@@ -1016,13 +1038,13 @@
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBox7.Location = new System.Drawing.Point(122, 100);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(267, 24);
+            this.textBox7.Size = new System.Drawing.Size(266, 24);
             this.textBox7.TabIndex = 3;
             // 
             // textBox8
             // 
             this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox8.Location = new System.Drawing.Point(530, 25);
+            this.textBox8.Location = new System.Drawing.Point(529, 25);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(276, 24);
             this.textBox8.TabIndex = 2;
@@ -1048,7 +1070,7 @@
             // kryptonLabel14
             // 
             this.kryptonLabel14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.kryptonLabel14.Location = new System.Drawing.Point(395, 25);
+            this.kryptonLabel14.Location = new System.Drawing.Point(394, 25);
             this.kryptonLabel14.Name = "kryptonLabel14";
             this.kryptonLabel14.Size = new System.Drawing.Size(48, 24);
             this.kryptonLabel14.TabIndex = 0;
@@ -1059,7 +1081,7 @@
             this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBox9.Location = new System.Drawing.Point(122, 25);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(267, 24);
+            this.textBox9.Size = new System.Drawing.Size(266, 24);
             this.textBox9.TabIndex = 1;
             // 
             // kryptonLabel16
@@ -1076,13 +1098,13 @@
             this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBox10.Location = new System.Drawing.Point(122, 177);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(267, 24);
+            this.textBox10.Size = new System.Drawing.Size(266, 24);
             this.textBox10.TabIndex = 3;
             // 
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox6.Location = new System.Drawing.Point(530, 100);
+            this.textBox6.Location = new System.Drawing.Point(529, 100);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(276, 24);
             this.textBox6.TabIndex = 4;
@@ -1090,7 +1112,7 @@
             // textBox11
             // 
             this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox11.Location = new System.Drawing.Point(530, 177);
+            this.textBox11.Location = new System.Drawing.Point(529, 177);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(276, 24);
             this.textBox11.TabIndex = 4;
@@ -1098,7 +1120,7 @@
             // kryptonLabel15
             // 
             this.kryptonLabel15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.kryptonLabel15.Location = new System.Drawing.Point(395, 177);
+            this.kryptonLabel15.Location = new System.Drawing.Point(394, 177);
             this.kryptonLabel15.Name = "kryptonLabel15";
             this.kryptonLabel15.Size = new System.Drawing.Size(39, 24);
             this.kryptonLabel15.TabIndex = 0;
@@ -1107,7 +1129,7 @@
             // kryptonLabel25
             // 
             this.kryptonLabel25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.kryptonLabel25.Location = new System.Drawing.Point(395, 100);
+            this.kryptonLabel25.Location = new System.Drawing.Point(394, 100);
             this.kryptonLabel25.Name = "kryptonLabel25";
             this.kryptonLabel25.Size = new System.Drawing.Size(76, 24);
             this.kryptonLabel25.TabIndex = 0;
@@ -1197,28 +1219,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblTitleDiem
-            // 
-            this.lblTitleDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitleDiem.Location = new System.Drawing.Point(108, 237);
-            this.lblTitleDiem.Name = "lblTitleDiem";
-            this.lblTitleDiem.Size = new System.Drawing.Size(61, 28);
-            this.lblTitleDiem.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lblTitleDiem.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleDiem.TabIndex = 2;
-            this.lblTitleDiem.Values.Text = "Điểm";
-            // 
-            // lblDiem
-            // 
-            this.lblDiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblDiem.Location = new System.Drawing.Point(197, 237);
-            this.lblDiem.Name = "lblDiem";
-            this.lblDiem.Size = new System.Drawing.Size(65, 28);
-            this.lblDiem.StateNormal.ShortText.Color1 = System.Drawing.Color.OrangeRed;
-            this.lblDiem.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiem.TabIndex = 1;
-            this.lblDiem.Values.Text = "10/20";
             // 
             // frmMain
             // 

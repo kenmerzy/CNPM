@@ -69,5 +69,51 @@ namespace BLL_DAL
 
         }
 
+        public IQueryable getThiSinh()
+        {
+            var thongtincanhans = from ts in tnth.ThongTinCaNhans
+                                  //join i in tnth.DotThis on ts.MaNgayThi equals i.MaNgayThi
+                                  //join qp in tnth.PhanQuyens on ts.MaLoaiTK equals qp.MaLoaiTK
+                                  select new { ts.MaTS, ts.HoVaTenTS, ts.Email, ts.CMND, ts.MatKhau, ts.NgaySinh, ts.SDT };
+            return thongtincanhans;
+        }
+        public bool suaThiSinh(int ma,string hoTen,string email,string sdt,string cmnd,string matkhau, string ngaysinh )
+        {
+            ThongTinCaNhan tt = tnth.ThongTinCaNhans.Where(t => t.MaTS == ma).FirstOrDefault();
+            tt.HoVaTenTS = hoTen;
+            tt.Email = email;
+            tt.SDT = sdt;
+            tt.CMND = cmnd;
+            tt.MatKhau = matkhau;
+            tt.NgaySinh = DateTime.Parse(ngaysinh);
+            try
+            {
+                tnth.SubmitChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+        public bool xoaThiSinh(string ma)
+        {
+            ThongTinCaNhan tt = tnth.ThongTinCaNhans.Where(t => t.MaTS == Convert.ToInt32(ma)).FirstOrDefault();
+            try
+            {
+                tnth.ThongTinCaNhans.DeleteOnSubmit(tt);
+                tnth.SubmitChanges();
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+        public List<ThongTinCaNhan> getThongTinCaNhan()
+        {
+            var getTTCN = from ttcn in tnth.ThongTinCaNhans select ttcn;
+            return getTTCN.ToList<ThongTinCaNhan>();
+        }
+
+
+      
     }
 }

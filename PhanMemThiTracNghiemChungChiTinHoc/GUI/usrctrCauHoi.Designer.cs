@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.rdBtnDapAn1 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.rdBtnDapAn2 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.rdBtnDapAn3 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.rdBtnDapAn4 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDA = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdBtnDapAn2 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.rdBtnDapAn1 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.rdBtnDapAn4 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.rdBtnDapAn3 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlDA.SuspendLayout();
@@ -49,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1400, 265);
+            this.panel1.Size = new System.Drawing.Size(1400, 224);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -65,64 +65,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1400, 265);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1400, 224);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // rdBtnDapAn1
-            // 
-            this.rdBtnDapAn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rdBtnDapAn1.Location = new System.Drawing.Point(40, 3);
-            this.rdBtnDapAn1.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
-            this.rdBtnDapAn1.Name = "rdBtnDapAn1";
-            this.rdBtnDapAn1.Size = new System.Drawing.Size(54, 46);
-            this.rdBtnDapAn1.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
-            this.rdBtnDapAn1.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnDapAn1.TabIndex = 1;
-            this.rdBtnDapAn1.Tag = "1";
-            this.rdBtnDapAn1.Values.Text = "KOI";
-            // 
-            // rdBtnDapAn2
-            // 
-            this.rdBtnDapAn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rdBtnDapAn2.Location = new System.Drawing.Point(40, 55);
-            this.rdBtnDapAn2.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
-            this.rdBtnDapAn2.Name = "rdBtnDapAn2";
-            this.rdBtnDapAn2.Size = new System.Drawing.Size(188, 46);
-            this.rdBtnDapAn2.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
-            this.rdBtnDapAn2.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnDapAn2.TabIndex = 1;
-            this.rdBtnDapAn2.Tag = "2";
-            this.rdBtnDapAn2.Values.Text = "kryptonRadioButton1";
-            // 
-            // rdBtnDapAn3
-            // 
-            this.rdBtnDapAn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rdBtnDapAn3.Location = new System.Drawing.Point(40, 107);
-            this.rdBtnDapAn3.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
-            this.rdBtnDapAn3.Name = "rdBtnDapAn3";
-            this.rdBtnDapAn3.Size = new System.Drawing.Size(188, 46);
-            this.rdBtnDapAn3.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
-            this.rdBtnDapAn3.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnDapAn3.TabIndex = 1;
-            this.rdBtnDapAn3.Tag = "3";
-            this.rdBtnDapAn3.Values.Text = "kryptonRadioButton1";
-            // 
-            // rdBtnDapAn4
-            // 
-            this.rdBtnDapAn4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rdBtnDapAn4.Location = new System.Drawing.Point(40, 159);
-            this.rdBtnDapAn4.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
-            this.rdBtnDapAn4.Name = "rdBtnDapAn4";
-            this.rdBtnDapAn4.Size = new System.Drawing.Size(188, 46);
-            this.rdBtnDapAn4.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
-            this.rdBtnDapAn4.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnDapAn4.TabIndex = 1;
-            this.rdBtnDapAn4.Tag = "4";
-            this.rdBtnDapAn4.Values.Text = "kryptonRadioButton1";
             // 
             // label1
             // 
@@ -142,7 +86,7 @@
             this.pnlDA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDA.Location = new System.Drawing.Point(3, 54);
             this.pnlDA.Name = "pnlDA";
-            this.pnlDA.Size = new System.Drawing.Size(1394, 208);
+            this.pnlDA.Size = new System.Drawing.Size(1394, 167);
             this.pnlDA.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -161,8 +105,64 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1394, 208);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1394, 167);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // rdBtnDapAn2
+            // 
+            this.rdBtnDapAn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rdBtnDapAn2.Location = new System.Drawing.Point(40, 44);
+            this.rdBtnDapAn2.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
+            this.rdBtnDapAn2.Name = "rdBtnDapAn2";
+            this.rdBtnDapAn2.Size = new System.Drawing.Size(188, 35);
+            this.rdBtnDapAn2.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
+            this.rdBtnDapAn2.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBtnDapAn2.TabIndex = 1;
+            this.rdBtnDapAn2.Tag = "2";
+            this.rdBtnDapAn2.Values.Text = "kryptonRadioButton1";
+            // 
+            // rdBtnDapAn1
+            // 
+            this.rdBtnDapAn1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rdBtnDapAn1.Location = new System.Drawing.Point(40, 3);
+            this.rdBtnDapAn1.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
+            this.rdBtnDapAn1.Name = "rdBtnDapAn1";
+            this.rdBtnDapAn1.Size = new System.Drawing.Size(54, 35);
+            this.rdBtnDapAn1.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
+            this.rdBtnDapAn1.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBtnDapAn1.TabIndex = 1;
+            this.rdBtnDapAn1.Tag = "1";
+            this.rdBtnDapAn1.Values.Text = "KOI";
+            // 
+            // rdBtnDapAn4
+            // 
+            this.rdBtnDapAn4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rdBtnDapAn4.Location = new System.Drawing.Point(40, 126);
+            this.rdBtnDapAn4.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
+            this.rdBtnDapAn4.Name = "rdBtnDapAn4";
+            this.rdBtnDapAn4.Size = new System.Drawing.Size(188, 38);
+            this.rdBtnDapAn4.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
+            this.rdBtnDapAn4.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBtnDapAn4.TabIndex = 1;
+            this.rdBtnDapAn4.Tag = "4";
+            this.rdBtnDapAn4.Values.Text = "kryptonRadioButton1";
+            // 
+            // rdBtnDapAn3
+            // 
+            this.rdBtnDapAn3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rdBtnDapAn3.Location = new System.Drawing.Point(40, 85);
+            this.rdBtnDapAn3.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
+            this.rdBtnDapAn3.Name = "rdBtnDapAn3";
+            this.rdBtnDapAn3.Size = new System.Drawing.Size(188, 35);
+            this.rdBtnDapAn3.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
+            this.rdBtnDapAn3.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBtnDapAn3.TabIndex = 1;
+            this.rdBtnDapAn3.Tag = "3";
+            this.rdBtnDapAn3.Values.Text = "kryptonRadioButton1";
             // 
             // usrctrCauHoi
             // 
@@ -170,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "usrctrCauHoi";
-            this.Size = new System.Drawing.Size(1400, 265);
+            this.Size = new System.Drawing.Size(1400, 224);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

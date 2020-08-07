@@ -15,7 +15,6 @@ namespace GUI
     {
         const int soLuongCauHoi = 20;
         CauHoiBLL_DAL cauHoiBLL_DAL;
-
         List<DapAn> listDapAnDung;
         List<CauHoi> lstCH;
         List<usrctrCauHoi> listUserControl;
@@ -28,7 +27,31 @@ namespace GUI
         {
             InitializeComponent();
             cauHoiBLL_DAL = new CauHoiBLL_DAL();
+            
          }
+        public frmMain(string maLoaiTaiKhoan)
+        {
+            InitializeComponent();
+            cauHoiBLL_DAL = new CauHoiBLL_DAL();
+
+            if (maLoaiTaiKhoan.Equals("AD"))
+            {
+                tabThi.Dispose();
+                tabDangKyTaiKhoan.Dispose();
+            }
+            if (maLoaiTaiKhoan.Equals("NV"))
+            {
+                tabThi.Dispose();
+                tabQuanLyCauHoi.Dispose();
+            }
+            if (maLoaiTaiKhoan.Equals("TS"))
+            {
+                tabDangKyTaiKhoan.Dispose();
+                tabQuanLyCauHoi.Dispose();
+                tabQuanLyThiSinh.Dispose();
+            }
+
+        }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -39,7 +62,7 @@ namespace GUI
             btnNopBai.Visible = false;
             lblTitleDiem.Visible = false;
             lblDiem.Visible = false;
-
+            loadThongTinCaNhan();
 
         }
         public void setMatKhau()
@@ -106,7 +129,7 @@ namespace GUI
             lblDiem.Text = diemSo.ToString() + "/"+ soLuongCauHoi.ToString();
             lblTitleDiem.Visible = true;
             lblDiem.Visible = true;
-            btnNopBai.Enabled = false;
+            btnNopBai.Visible = false;
 
         }
 
@@ -330,5 +353,68 @@ namespace GUI
             }
             return diem;
         }
+
+
+        public void loadThongTinCaNhan()
+        {
+            dgvThiSinh.DataSource = cauHoiBLL_DAL.getThiSinh();
+        }
+        private void dgvThiSinh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvThiSinh.Rows[e.RowIndex];
+                txtHoVaTen.Text = row.Cells[1].Value.ToString();
+                txt_Email.Text = row.Cells[2].Value.ToString();
+                txtCMNDan.Text = row.Cells[3].Value.ToString();
+                txtMK.Text = row.Cells[4].Value.ToString();
+                txtNgaysinh.Text = DateTime.Parse(row.Cells[5].Value.ToString()).ToShortDateString();
+                txt_SDT.Text = row.Cells[6].Value.ToString();
+            }
+        }
+
+        private void btnXoaThiSinh_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có chắc chắn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (rs == DialogResult.Yes)
+            {
+
+                string ma = dgvThiSinh.CurrentRow.Cells[0].Value.ToString();
+                bool kq = cauHoiBLL_DAL.xoaThiSinh(ma);
+                if (kq)
+                {
+                    loadThongTinCaNhan();
+                    MessageBox.Show("Xóa Thành Công");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                }
+            }
+        }
+
+        private void btnSuaThiSinh_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn sửa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (rs == DialogResult.Yes)
+            {
+                string ma = dgvThiSinh.CurrentRow.Cells[0].Value.ToString();
+                bool kq = cauHoiBLL_DAL.suaThiSinh(int.Parse(ma), txtHoVaTen.Text, txt_Email.Text, txt_SDT.Text, txtCMNDan.Text, txtMK.Text, txtNgaysinh.Text);
+
+                if (kq)
+                {
+                    MessageBox.Show("Sửa Thành Công");
+                    loadThongTinCaNhan();
+
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
+            }
+        }
+
+
+
     }
 }

@@ -18,6 +18,13 @@ namespace BLL_DAL
             List<CauHoi> asList = cauhois.ToList<CauHoi>();
             return asList;
         }
+        public IQueryable getCauHoi2()
+        {
+            var cauhois = from ch in tnth.CauHois
+                          select new { ch.MaCH, ch.NoiDungCH, ch.DoKho };
+          
+            return cauhois;
+        }
         public List<DapAn> getDapan(int mach)
         {
             var dapans = from da in tnth.DapAns where da.MaCH == mach select da;
@@ -139,6 +146,59 @@ namespace BLL_DAL
                 return false;
             }
         }
+
+
+        public bool themCauHoi(string noiDungCH, int doKho, List<DapAn> lstDA)
+        {
+
+            CauHoi ch = new CauHoi();
+            DapAn da;
+            ch.NoiDungCH = noiDungCH;
+            ch.DoKho = doKho;
+            ch.HinhThucCH = null;
+            
+                try
+                {
+                    tnth.CauHois.InsertOnSubmit(ch);
+                    tnth.SubmitChanges();
+                    for (int i = 0; i < lstDA.Count; i++)
+                    {
+                        da = new DapAn();
+                        da.MaCH = ch.MaCH;
+                        da.NoiDungDA = lstDA[i].NoiDungDA;
+                        da.DungSai = lstDA[i].DungSai;
+                        tnth.DapAns.InsertOnSubmit(da);
+                    }
+                    
+                    tnth.SubmitChanges();
+                    return true;
+                }
+                catch { return false; }
+            
+        }
+        public bool xoaCauHoi(int maCH)
+        {
+            CauHoi xoaCH = tnth.CauHois.Where(t => t.MaCH == maCH).FirstOrDefault();
+            var dapans = from da in tnth.DapAns 
+                         where da.MaCH == maCH 
+                         select da;
+            List<DapAn> lstDA = dapans.ToList<DapAn>();
+            try
+            {
+                tnth.CauHois.DeleteOnSubmit(xoaCH);
+                for (int i = 0; i < lstDA.Count; i++)
+                    tnth.DapAns.DeleteOnSubmit(lstDA[i]);
+
+                tnth.CauHois.DeleteOnSubmit(xoaCH);
+                tnth.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public List<ThongTinCaNhan> getThongTinCaNhan()
         {
             var getTTCN = from ttcn in tnth.ThongTinCaNhans select ttcn;

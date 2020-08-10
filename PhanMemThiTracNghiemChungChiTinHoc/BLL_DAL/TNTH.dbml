@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_ThiTNTH" Class="TNTHDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-UKDQP37H\SQLEXPRESS;Initial Catalog=QL_ThiTNTH;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QL_ThiTNTHConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CauHoi" Member="CauHois">
-    <Type Name="CauHoi">
-      <Column Name="MaCH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HinhThucCH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NoiDungCH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DoKho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="CauHoi_DapAn" Member="DapAns" ThisKey="MaCH" OtherKey="MaCH" Type="DapAn" />
-    </Type>
-  </Table>
   <Table Name="dbo.ThongTinCaNhan" Member="ThongTinCaNhans">
     <Type Name="ThongTinCaNhan">
       <Column Name="MaTS" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -26,9 +16,18 @@
       <Association Name="PhanQuyen_ThongTinCaNhan" Member="PhanQuyen" ThisKey="MaLoaiTK" OtherKey="MaLoaiTK" Type="PhanQuyen" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CauHoi" Member="CauHois">
+    <Type Name="CauHoi">
+      <Column Name="MaCH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HinhThucCH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoiDungCH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DoKho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CauHoi_DapAn" Member="DapAns" ThisKey="MaCH" OtherKey="MaCH" Type="DapAn" />
+    </Type>
+  </Table>
   <Table Name="dbo.DapAn" Member="DapAns">
     <Type Name="DapAn">
-      <Column Name="MaDA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaCH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DungSai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="NoiDungDA" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
@@ -49,6 +48,7 @@
       <Column Name="MaKT" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Diem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="ThongTinCaNhan_KetQua" Member="ThongTinCaNhan" ThisKey="MaTS" OtherKey="MaTS" Type="ThongTinCaNhan" IsForeignKey="true" />
+      <Association Name="KyThi_KetQua" Member="KyThi" ThisKey="MaKT" OtherKey="MaKT" Type="KyThi" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KyThi" Member="KyThis">
@@ -58,6 +58,7 @@
       <Column Name="DotThi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaNgayThi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="KyThi_ThongTinCaNhan" Member="ThongTinCaNhans" ThisKey="MaKT" OtherKey="MaKyThi" Type="ThongTinCaNhan" />
+      <Association Name="KyThi_KetQua" Member="KetQuas" ThisKey="MaKT" OtherKey="MaKT" Type="KetQua" />
       <Association Name="DotThi_KyThi" Member="DotThi1" ThisKey="MaNgayThi" OtherKey="MaNgayThi" Type="DotThi" IsForeignKey="true" />
     </Type>
   </Table>

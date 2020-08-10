@@ -44,7 +44,6 @@ E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\obj\Debug\GUI.exe
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\obj\Debug\GUI.pdb
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\GUI.exe
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\GUI.pdb
-E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\BLL_DAL.dll
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\ComponentFactory.Krypton.Design.dll
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\ComponentFactory.Krypton.Docking.dll
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\ComponentFactory.Krypton.Navigator.dll
@@ -67,3 +66,4 @@ E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\obj\Debug\GUI.frmMai
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\obj\Debug\GUI.Properties.Resources.resources
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\obj\Debug\GUI.usrctrCauHoi.resources
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\GUI\bin\Debug\BLL_DAL.dll

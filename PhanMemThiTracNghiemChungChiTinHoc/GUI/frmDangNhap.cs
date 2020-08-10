@@ -14,6 +14,8 @@ namespace GUI
     {
         CauHoiBLL_DAL phanQuyen;
         string maLoaiTK;
+        int maThiSinh;
+        string maKyThi;
         public frmDangNhap()
         {
             InitializeComponent();
@@ -51,6 +53,8 @@ namespace GUI
                 if (tt.MatKhau.Equals(mk))
                 {
                     maLoaiTK = tt.MaLoaiTK;
+                    maThiSinh = tt.MaTS;
+                    maKyThi = tt.MaKyThi;
                     return true;
                 }
                 else
@@ -73,7 +77,7 @@ namespace GUI
             }
             else
             {
-                frmMain mainAD = new frmMain(maLoaiTK);
+                frmMain mainAD = new frmMain(maLoaiTK,maThiSinh,maKyThi);
                 mainAD.Show();
                 this.Hide();
             }

@@ -36,13 +36,20 @@ namespace BLL_DAL
             var loaitk = from tk in tnth.PhanQuyens select tk;
             return loaitk;
         }
+        public IQueryable loadLoaiTK(string maQuyen)
+        {
+            var loaitk = from tk in tnth.PhanQuyens
+                                where tk.MaLoaiTK.Equals(maQuyen)
+                                select tk;
+            return loaitk;
+        }
         public IQueryable loaddotThi()
         {
             var loaidt = from d in tnth.DotThis select d;
             return loaidt;
         }
 
-        public int saveDangKy(string hovaten,string email,string sdt,string cmnd, string mk,DateTime ngaysinh,string maloaiTK, string maNgayThi)
+        public int saveDangKy(string hovaten,string email,string sdt,string cmnd, string mk,DateTime ngaysinh,string maloaiTK, string maKyThi)
         {
             ThongTinCaNhan tt = new ThongTinCaNhan();
           
@@ -53,9 +60,7 @@ namespace BLL_DAL
             tt.CMND = cmnd;
             tt.MatKhau = mk;
             tt.MaLoaiTK = maloaiTK;
-            tt.MaNgayThi = maNgayThi;
-           
-
+            tt.MaKyThi = maKyThi;
             try
             {
                 tnth.ThongTinCaNhans.InsertOnSubmit(tt);
@@ -68,13 +73,35 @@ namespace BLL_DAL
 
 
         }
+        public bool saveKetQua(int maThiSinh, string diem)
+        {
+            KetQua kq = new KetQua();
+            kq.MaTS = maThiSinh;
+            kq.Diem = diem;
+            kq.MaKT = "Test";
+            try
+            {   
+                tnth.KetQuas.InsertOnSubmit(kq);
+                tnth.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+               
+            } return false; 
+        }
 
         public IQueryable getThiSinh()
         {
             var thongtincanhans = from ts in tnth.ThongTinCaNhans
-                                  //join i in tnth.DotThis on ts.MaNgayThi equals i.MaNgayThi
-                                  //join qp in tnth.PhanQuyens on ts.MaLoaiTK equals qp.MaLoaiTK
                                   select new { ts.MaTS, ts.HoVaTenTS, ts.Email, ts.CMND, ts.MatKhau, ts.NgaySinh, ts.SDT };
+            return thongtincanhans;
+        }
+        public IQueryable getThiSinh(string loaiTK)
+        {
+            var thongtincanhans = from ts in tnth.ThongTinCaNhans
+                                               where ts.MaLoaiTK.Equals(loaiTK)
+                                                select new { ts.MaTS, ts.HoVaTenTS, ts.Email, ts.CMND, ts.MatKhau, ts.NgaySinh, ts.SDT };
             return thongtincanhans;
         }
         public bool suaThiSinh(int ma,string hoTen,string email,string sdt,string cmnd,string matkhau, string ngaysinh )
@@ -112,7 +139,14 @@ namespace BLL_DAL
             var getTTCN = from ttcn in tnth.ThongTinCaNhans select ttcn;
             return getTTCN.ToList<ThongTinCaNhan>();
         }
-
+        public IQueryable loadKyThi(string madotthi)
+        {
+            var kt = from k in tnth.KyThis
+                     join l in tnth.DotThis on k.MaNgayThi equals l.MaNgayThi
+                     where k.MaNgayThi == madotthi
+                     select new { k.MaKT, k.DotThi };
+            return kt;
+        }
 
       
     }

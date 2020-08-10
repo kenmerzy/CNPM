@@ -71,11 +71,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Sienna;
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(12, 12, 30, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 34);
+            this.label1.Size = new System.Drawing.Size(77, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             this.label1.UseCompatibleTextRendering = true;
@@ -84,9 +85,9 @@
             // 
             this.pnlDA.Controls.Add(this.tableLayoutPanel2);
             this.pnlDA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDA.Location = new System.Drawing.Point(3, 54);
+            this.pnlDA.Location = new System.Drawing.Point(3, 57);
             this.pnlDA.Name = "pnlDA";
-            this.pnlDA.Size = new System.Drawing.Size(1394, 167);
+            this.pnlDA.Size = new System.Drawing.Size(1394, 164);
             this.pnlDA.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -105,7 +106,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1394, 167);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1394, 164);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // rdBtnDapAn2
@@ -143,7 +144,7 @@
             this.rdBtnDapAn4.Location = new System.Drawing.Point(40, 126);
             this.rdBtnDapAn4.Margin = new System.Windows.Forms.Padding(40, 3, 50, 3);
             this.rdBtnDapAn4.Name = "rdBtnDapAn4";
-            this.rdBtnDapAn4.Size = new System.Drawing.Size(188, 38);
+            this.rdBtnDapAn4.Size = new System.Drawing.Size(188, 35);
             this.rdBtnDapAn4.StateNormal.ShortText.Color1 = System.Drawing.Color.Black;
             this.rdBtnDapAn4.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdBtnDapAn4.TabIndex = 1;

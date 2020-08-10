@@ -19,9 +19,10 @@
       <Column Name="CMND" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MaLoaiTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaNgayThi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaKyThi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="DotThi_ThongTinCaNhan" Member="DotThi" ThisKey="MaNgayThi" OtherKey="MaNgayThi" Type="DotThi" IsForeignKey="true" />
+      <Association Name="ThongTinCaNhan_KetQua" Member="KetQuas" ThisKey="MaTS" OtherKey="MaTS" Type="KetQua" />
+      <Association Name="KyThi_ThongTinCaNhan" Member="KyThi" ThisKey="MaKyThi" OtherKey="MaKT" Type="KyThi" IsForeignKey="true" />
       <Association Name="PhanQuyen_ThongTinCaNhan" Member="PhanQuyen" ThisKey="MaLoaiTK" OtherKey="MaLoaiTK" Type="PhanQuyen" IsForeignKey="true" />
     </Type>
   </Table>
@@ -36,19 +37,18 @@
   </Table>
   <Table Name="dbo.DotThi" Member="DotThis">
     <Type Name="DotThi">
-      <Column Name="MaNgayThi" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNgayThi" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NgayThi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SoLuongDK" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DotThi_ThongTinCaNhan" Member="ThongTinCaNhans" ThisKey="MaNgayThi" OtherKey="MaNgayThi" Type="ThongTinCaNhan" />
+      <Association Name="DotThi_KyThi" Member="KyThis" ThisKey="MaNgayThi" OtherKey="MaNgayThi" Type="KyThi" />
     </Type>
   </Table>
   <Table Name="dbo.KetQua" Member="KetQuas">
     <Type Name="KetQua">
       <Column Name="MaTS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaKT" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Diem" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="KetQua" Member="KetQua1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="KyThi_KetQua" Member="KyThi" ThisKey="MaKT" OtherKey="MaKT" Type="KyThi" IsForeignKey="true" />
+      <Column Name="Diem" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="ThongTinCaNhan_KetQua" Member="ThongTinCaNhan" ThisKey="MaTS" OtherKey="MaTS" Type="ThongTinCaNhan" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KyThi" Member="KyThis">
@@ -56,8 +56,9 @@
       <Column Name="MaKT" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ThoiGianLamBai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DotThi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayThi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="KyThi_KetQua" Member="KetQuas" ThisKey="MaKT" OtherKey="MaKT" Type="KetQua" />
+      <Column Name="MaNgayThi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="KyThi_ThongTinCaNhan" Member="ThongTinCaNhans" ThisKey="MaKT" OtherKey="MaKyThi" Type="ThongTinCaNhan" />
+      <Association Name="DotThi_KyThi" Member="DotThi1" ThisKey="MaNgayThi" OtherKey="MaNgayThi" Type="DotThi" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PhanQuyen" Member="PhanQuyens">

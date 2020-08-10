@@ -185,7 +185,6 @@ namespace BLL_DAL
             List<DapAn> lstDA = dapans.ToList<DapAn>();
             try
             {
-                tnth.CauHois.DeleteOnSubmit(xoaCH);
                 for (int i = 0; i < lstDA.Count; i++)
                     tnth.DapAns.DeleteOnSubmit(lstDA[i]);
 

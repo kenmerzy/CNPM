@@ -16,6 +16,7 @@ namespace GUI
         const int soLuongCauHoi = 20;
         int maThiSinh;
         bool isThem;
+        int  maCH;
         string maLoaiTaiKhoan;
         string maKyThi;
         bool isNhanVien;
@@ -293,6 +294,7 @@ namespace GUI
             cboDotThi.DataSource = cauHoiBLL_DAL.loaddotThi();
             cboDotThi.DisplayMember = "NgayThi";
             cboDotThi.ValueMember = "MaNgayThi";
+            cboDotThi.SelectedIndex = 0;
         }
         //đăng ký
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -497,7 +499,7 @@ namespace GUI
         {
             txt_CH.Text = kryptonDataGridView1.SelectedCells[1].Value.ToString();
             txt_DoKho.Text = kryptonDataGridView1.SelectedCells[2].Value.ToString();
-            int maCH = int.Parse(kryptonDataGridView1.SelectedCells[0].Value.ToString());
+            maCH = int.Parse(kryptonDataGridView1.SelectedCells[0].Value.ToString());
             List<DapAn> da = cauHoiBLL_DAL.getDapan(maCH);
             txt_DA1.Text = da[0].NoiDungDA;
             txt_DA2.Text = da[1].NoiDungDA;
@@ -508,7 +510,8 @@ namespace GUI
             radioButton3.Checked = bool.Parse(da[2].DungSai.ToString());
             radioButton4.Checked = bool.Parse(da[3].DungSai.ToString());
             Btn_Xoa.Enabled = true;
-            btnSuaThiSinh .Enabled= true;
+            Btn_Sua.Enabled = true;
+           
         }
 
         private void Btn_Them_Click(object sender, EventArgs e)
@@ -576,7 +579,7 @@ namespace GUI
                 }
                 if (txt_DoKho.Text.Trim().Length == 0)
                 {
-                    MessageBox.Show("Bạn phải nhập nội dung đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bạn phải nhập độ khó", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_DoKho.Focus();
                     return;
                 }
@@ -605,7 +608,7 @@ namespace GUI
                 listDapAnThem.Add(da3);
                 listDapAnThem.Add(da4);
 
-                if(cauHoiBLL_DAL.themCauHoi(txt_CH.Text,int.Parse(txt_DoKho.Text),listDapAnThem))
+                if (cauHoiBLL_DAL.themCauHoi(txt_CH.Text, int.Parse(txt_DoKho.Text), listDapAnThem))
                     MessageBox.Show("Thêm thành công");
                 else
                     MessageBox.Show("Thêm thất bại");
@@ -613,6 +616,86 @@ namespace GUI
                 Btn_Luu.Enabled = false;
                 loadcontrol(false);
             }
+            else
+            {
+                if (txt_CH.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải nhập nội dung câu hỏi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_CH.Focus();
+                    return;
+                }
+                if (txt_DA1.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải nhập nội dung đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_DA1.Focus();
+                    return;
+                }
+                if (txt_DA2.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải nhập nội dung đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_DA2.Focus();
+                    return;
+                }
+                if (txt_DA3.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải nhập nội dung đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_DA3.Focus();
+                    return;
+                }
+                if (txt_DA4.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải nhập nội dung đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_DA4.Focus();
+                    return;
+                }
+                if (txt_DoKho.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải nhập nội dung đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_DoKho.Focus();
+                    return;
+                }
+                 List<DapAn> listDapAnSua = new List<DapAn>();
+
+                DapAn da1, da2, da3, da4;
+                da1 = new DapAn();
+                da2 = new DapAn();
+                da3 = new DapAn();
+                da4 = new DapAn();
+
+                da1.NoiDungDA = txt_DA1.Text;
+                da1.DungSai = radioButton1.Checked;
+
+                da2.NoiDungDA = txt_DA2.Text;
+                da2.DungSai = radioButton2.Checked;
+
+                da3.NoiDungDA = txt_DA3.Text;
+                da3.DungSai = radioButton3.Checked;
+
+                da4.NoiDungDA = txt_DA4.Text;
+                da4.DungSai = radioButton4.Checked;
+
+                listDapAnSua.Add(da1);
+                listDapAnSua.Add(da2);
+                listDapAnSua.Add(da3);
+                listDapAnSua.Add(da4);
+
+                if(cauHoiBLL_DAL.suaCauHoi(maCH,txt_CH.Text,int.Parse(txt_DoKho.Text),listDapAnSua))
+                   MessageBox.Show("Sửa thành công");
+                else
+                    MessageBox.Show("Sửa thất bại");
+                kryptonDataGridView1.DataSource = cauHoiBLL_DAL.getCauHoi2();
+                Btn_Luu.Enabled = false;
+                loadcontrol(false);
+            }
+        }
+
+
+        private void Btn_Sua_Click(object sender, EventArgs e)
+        {
+            Btn_Luu.Enabled = true;
+            txt_CH.Focus();
+            loadcontrol(true);
+            isThem = false;
         }
 
 

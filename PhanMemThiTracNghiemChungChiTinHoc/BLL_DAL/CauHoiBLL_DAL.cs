@@ -185,10 +185,45 @@ namespace BLL_DAL
             List<DapAn> lstDA = dapans.ToList<DapAn>();
             try
             {
+                tnth.CauHois.DeleteOnSubmit(xoaCH);
                 for (int i = 0; i < lstDA.Count; i++)
                     tnth.DapAns.DeleteOnSubmit(lstDA[i]);
 
                 tnth.CauHois.DeleteOnSubmit(xoaCH);
+                tnth.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private List<int> getMaDapAn(int maCH)
+        {
+            var dapans = from da in tnth.DapAns
+                         where da.MaCH == maCH
+                         select da.MaDA;
+            List<int> lstDA = dapans.ToList<int>();
+            return lstDA;
+                         
+        }
+        public bool suaCauHoi(int maCH, string noiDungCH,int doKho, List<DapAn> lstDA)
+        {
+            CauHoi ch = tnth.CauHois.Where(t => t.MaCH == maCH).FirstOrDefault();
+            ch.NoiDungCH = noiDungCH;
+            ch.DoKho = doKho;
+
+            List<int> lst = getMaDapAn(maCH);
+            DapAn da;
+            try
+            {
+                for (int i = 0; i < lst.Count; i++)
+                {
+                    da = tnth.DapAns.Where(t => t.MaDA == lst[i]).FirstOrDefault();
+                    da.NoiDungDA = lstDA[i].NoiDungDA;
+                    da.DungSai = lstDA[i].DungSai;
+                }
+
                 tnth.SubmitChanges();
                 return true;
             }

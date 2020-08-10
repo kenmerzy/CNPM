@@ -55,6 +55,9 @@
             this.txt_CH = new System.Windows.Forms.TextBox();
             this.txt_DoKho = new System.Windows.Forms.TextBox();
             this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.MaCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiDungCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Btn_Them = new System.Windows.Forms.ToolStripButton();
             this.Btn_Xoa = new System.Windows.Forms.ToolStripButton();
@@ -135,9 +138,6 @@
             this.cboLoaiTK = new System.Windows.Forms.ComboBox();
             this.btnDangKy = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.MaCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDungCH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabQuanLyCauHoi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel5)).BeginInit();
             this.kryptonPanel5.SuspendLayout();
@@ -403,7 +403,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.26375F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.73625F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel9.Controls.Add(this.kryptonLabel4, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.kryptonLabel21, 2, 0);
             this.tableLayoutPanel9.Controls.Add(this.txt_CH, 1, 0);
@@ -428,7 +428,7 @@
             // 
             // kryptonLabel21
             // 
-            this.kryptonLabel21.Location = new System.Drawing.Point(700, 2);
+            this.kryptonLabel21.Location = new System.Drawing.Point(699, 2);
             this.kryptonLabel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kryptonLabel21.Name = "kryptonLabel21";
             this.kryptonLabel21.Size = new System.Drawing.Size(62, 24);
@@ -441,12 +441,12 @@
             this.txt_CH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_CH.Multiline = true;
             this.txt_CH.Name = "txt_CH";
-            this.txt_CH.Size = new System.Drawing.Size(585, 68);
+            this.txt_CH.Size = new System.Drawing.Size(584, 68);
             this.txt_CH.TabIndex = 2;
             // 
             // txt_DoKho
             // 
-            this.txt_DoKho.Location = new System.Drawing.Point(773, 2);
+            this.txt_DoKho.Location = new System.Drawing.Point(772, 2);
             this.txt_DoKho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_DoKho.Multiline = true;
             this.txt_DoKho.Name = "txt_DoKho";
@@ -472,6 +472,30 @@
             this.kryptonDataGridView1.Size = new System.Drawing.Size(897, 388);
             this.kryptonDataGridView1.TabIndex = 1;
             this.kryptonDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellClick);
+            // 
+            // MaCH
+            // 
+            this.MaCH.DataPropertyName = "MaCH";
+            this.MaCH.HeaderText = "Mã câu hỏi";
+            this.MaCH.Name = "MaCH";
+            this.MaCH.ReadOnly = true;
+            this.MaCH.Width = 120;
+            // 
+            // NoiDungCH
+            // 
+            this.NoiDungCH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NoiDungCH.DataPropertyName = "NoiDungCH";
+            this.NoiDungCH.HeaderText = "Nội dung câu hỏi";
+            this.NoiDungCH.Name = "NoiDungCH";
+            this.NoiDungCH.ReadOnly = true;
+            // 
+            // DoKho
+            // 
+            this.DoKho.DataPropertyName = "DoKho";
+            this.DoKho.HeaderText = "Độ khó";
+            this.DoKho.Name = "DoKho";
+            this.DoKho.ReadOnly = true;
+            this.DoKho.Width = 120;
             // 
             // toolStrip1
             // 
@@ -512,6 +536,7 @@
             this.Btn_Sua.Name = "Btn_Sua";
             this.Btn_Sua.Size = new System.Drawing.Size(54, 24);
             this.Btn_Sua.Text = "Sửa";
+            this.Btn_Sua.Click += new System.EventHandler(this.Btn_Sua_Click);
             // 
             // Btn_Luu
             // 
@@ -565,7 +590,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.36437F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.63563F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 387F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 388F));
             this.tableLayoutPanel12.Controls.Add(this.txtCMNDan, 1, 1);
             this.tableLayoutPanel12.Controls.Add(this.txt_Email, 3, 0);
             this.tableLayoutPanel12.Controls.Add(this.kryptonLabel12, 0, 0);
@@ -594,13 +619,13 @@
             this.txtCMNDan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCMNDan.Location = new System.Drawing.Point(116, 99);
             this.txtCMNDan.Name = "txtCMNDan";
-            this.txtCMNDan.Size = new System.Drawing.Size(255, 27);
+            this.txtCMNDan.Size = new System.Drawing.Size(254, 27);
             this.txtCMNDan.TabIndex = 3;
             // 
             // txt_Email
             // 
             this.txt_Email.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_Email.Location = new System.Drawing.Point(512, 24);
+            this.txt_Email.Location = new System.Drawing.Point(511, 24);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(276, 27);
             this.txt_Email.TabIndex = 2;
@@ -626,7 +651,7 @@
             // kryptonLabel14
             // 
             this.kryptonLabel14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.kryptonLabel14.Location = new System.Drawing.Point(377, 25);
+            this.kryptonLabel14.Location = new System.Drawing.Point(376, 25);
             this.kryptonLabel14.Name = "kryptonLabel14";
             this.kryptonLabel14.Size = new System.Drawing.Size(48, 24);
             this.kryptonLabel14.TabIndex = 0;
@@ -637,7 +662,7 @@
             this.txtHoVaTen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtHoVaTen.Location = new System.Drawing.Point(116, 24);
             this.txtHoVaTen.Name = "txtHoVaTen";
-            this.txtHoVaTen.Size = new System.Drawing.Size(255, 27);
+            this.txtHoVaTen.Size = new System.Drawing.Size(254, 27);
             this.txtHoVaTen.TabIndex = 1;
             // 
             // kryptonLabel16
@@ -654,13 +679,13 @@
             this.txtNgaysinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNgaysinh.Location = new System.Drawing.Point(116, 175);
             this.txtNgaysinh.Name = "txtNgaysinh";
-            this.txtNgaysinh.Size = new System.Drawing.Size(255, 27);
+            this.txtNgaysinh.Size = new System.Drawing.Size(254, 27);
             this.txtNgaysinh.TabIndex = 3;
             // 
             // txtMK
             // 
             this.txtMK.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtMK.Location = new System.Drawing.Point(512, 99);
+            this.txtMK.Location = new System.Drawing.Point(511, 99);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(276, 27);
             this.txtMK.TabIndex = 4;
@@ -668,7 +693,7 @@
             // txt_SDT
             // 
             this.txt_SDT.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_SDT.Location = new System.Drawing.Point(512, 175);
+            this.txt_SDT.Location = new System.Drawing.Point(511, 175);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(276, 27);
             this.txt_SDT.TabIndex = 4;
@@ -676,7 +701,7 @@
             // kryptonLabel15
             // 
             this.kryptonLabel15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.kryptonLabel15.Location = new System.Drawing.Point(377, 177);
+            this.kryptonLabel15.Location = new System.Drawing.Point(376, 177);
             this.kryptonLabel15.Name = "kryptonLabel15";
             this.kryptonLabel15.Size = new System.Drawing.Size(39, 24);
             this.kryptonLabel15.TabIndex = 0;
@@ -685,7 +710,7 @@
             // kryptonLabel25
             // 
             this.kryptonLabel25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.kryptonLabel25.Location = new System.Drawing.Point(377, 100);
+            this.kryptonLabel25.Location = new System.Drawing.Point(376, 100);
             this.kryptonLabel25.Name = "kryptonLabel25";
             this.kryptonLabel25.Size = new System.Drawing.Size(76, 24);
             this.kryptonLabel25.TabIndex = 0;
@@ -1293,7 +1318,7 @@
             // 
             this.cboChonKyThi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboChonKyThi.FormattingEnabled = true;
-            this.cboChonKyThi.Location = new System.Drawing.Point(407, 441);
+            this.cboChonKyThi.Location = new System.Drawing.Point(407, 442);
             this.cboChonKyThi.Name = "cboChonKyThi";
             this.cboChonKyThi.Size = new System.Drawing.Size(220, 28);
             this.cboChonKyThi.TabIndex = 7;
@@ -1302,7 +1327,7 @@
             // 
             this.cboDotThi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboDotThi.FormattingEnabled = true;
-            this.cboDotThi.Location = new System.Drawing.Point(409, 389);
+            this.cboDotThi.Location = new System.Drawing.Point(409, 387);
             this.cboDotThi.Name = "cboDotThi";
             this.cboDotThi.Size = new System.Drawing.Size(216, 28);
             this.cboDotThi.TabIndex = 6;
@@ -1345,7 +1370,7 @@
             // 
             this.cboLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboLoaiTK.FormattingEnabled = true;
-            this.cboLoaiTK.Location = new System.Drawing.Point(409, 336);
+            this.cboLoaiTK.Location = new System.Drawing.Point(409, 334);
             this.cboLoaiTK.Name = "cboLoaiTK";
             this.cboLoaiTK.Size = new System.Drawing.Size(216, 28);
             this.cboLoaiTK.TabIndex = 6;
@@ -1374,30 +1399,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(917, 691);
             this.tabControl1.TabIndex = 8;
-            // 
-            // MaCH
-            // 
-            this.MaCH.DataPropertyName = "MaCH";
-            this.MaCH.HeaderText = "Mã câu hỏi";
-            this.MaCH.Name = "MaCH";
-            this.MaCH.ReadOnly = true;
-            this.MaCH.Width = 120;
-            // 
-            // NoiDungCH
-            // 
-            this.NoiDungCH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NoiDungCH.DataPropertyName = "NoiDungCH";
-            this.NoiDungCH.HeaderText = "Nội dung câu hỏi";
-            this.NoiDungCH.Name = "NoiDungCH";
-            this.NoiDungCH.ReadOnly = true;
-            // 
-            // DoKho
-            // 
-            this.DoKho.DataPropertyName = "DoKho";
-            this.DoKho.HeaderText = "Độ khó";
-            this.DoKho.Name = "DoKho";
-            this.DoKho.ReadOnly = true;
-            this.DoKho.Width = 120;
             // 
             // frmMain
             // 

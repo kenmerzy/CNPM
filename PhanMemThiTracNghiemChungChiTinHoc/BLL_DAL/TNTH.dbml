@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_ThiTNTH" Class="TNTHDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-UKDQP37H\SQLEXPRESS;Initial Catalog=QL_ThiTNTH;Integrated Security=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QL_ThiTNTHConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CauHoi" Member="CauHois">
+    <Type Name="CauHoi">
+      <Column Name="MaCH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HinhThucCH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoiDungCH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DoKho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CauHoi_DapAn" Member="DapAns" ThisKey="MaCH" OtherKey="MaCH" Type="DapAn" />
+    </Type>
+  </Table>
   <Table Name="dbo.ThongTinCaNhan" Member="ThongTinCaNhans">
     <Type Name="ThongTinCaNhan">
       <Column Name="MaTS" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -16,15 +25,6 @@
       <Association Name="PhanQuyen_ThongTinCaNhan" Member="PhanQuyen" ThisKey="MaLoaiTK" OtherKey="MaLoaiTK" Type="PhanQuyen" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CauHoi" Member="CauHois">
-    <Type Name="CauHoi">
-      <Column Name="MaCH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HinhThucCH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NoiDungCH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="DoKho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="CauHoi_DapAn" Member="DapAns" ThisKey="MaCH" OtherKey="MaCH" Type="DapAn" />
-    </Type>
-  </Table>
   <Table Name="dbo.DapAn" Member="DapAns">
     <Type Name="DapAn">
       <Column Name="MaDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -37,7 +37,7 @@
   <Table Name="dbo.DotThi" Member="DotThis">
     <Type Name="DotThi">
       <Column Name="MaNgayThi" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NgayThi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NgayThi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="SoLuongDK" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DotThi_KyThi" Member="KyThis" ThisKey="MaNgayThi" OtherKey="MaNgayThi" Type="KyThi" />
     </Type>

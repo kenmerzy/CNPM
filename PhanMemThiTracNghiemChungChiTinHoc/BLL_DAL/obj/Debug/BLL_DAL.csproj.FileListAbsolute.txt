@@ -13,3 +13,4 @@ E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DA
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll.config
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.dll
 E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\bin\Debug\BLL_DAL.pdb
+E:\CNPM\PhanMemThiTH\PhanMemThiTracNghiemChungChiTinHoc\BLL_DAL\obj\Debug\BLL_DAL.csprojResolveAssemblyReference.cache

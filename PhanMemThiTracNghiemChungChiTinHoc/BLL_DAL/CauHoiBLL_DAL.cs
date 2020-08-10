@@ -73,12 +73,12 @@ namespace BLL_DAL
 
 
         }
-        public bool saveKetQua(int maThiSinh, string diem)
+        public bool saveKetQua(int maThiSinh,string maKyThi, int diem)
         {
             KetQua kq = new KetQua();
             kq.MaTS = maThiSinh;
             kq.Diem = diem;
-            kq.MaKT = "Test";
+            kq.MaKT = maKyThi;
             try
             {   
                 tnth.KetQuas.InsertOnSubmit(kq);
@@ -96,6 +96,11 @@ namespace BLL_DAL
             var thongtincanhans = from ts in tnth.ThongTinCaNhans
                                   select new { ts.MaTS, ts.HoVaTenTS, ts.Email, ts.CMND, ts.MatKhau, ts.NgaySinh, ts.SDT };
             return thongtincanhans;
+        }
+        public KyThi getThoiGianLamBai(string maKT)
+        {
+            KyThi kt = tnth.KyThis.Where(t => t.MaKT.Equals(maKT)).FirstOrDefault();
+            return kt;
         }
         public IQueryable getThiSinh(string loaiTK)
         {

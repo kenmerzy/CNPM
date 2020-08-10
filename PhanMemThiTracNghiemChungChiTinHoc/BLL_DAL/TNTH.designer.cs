@@ -1013,7 +1013,7 @@ namespace BLL_DAL
 		
 		private string _MaKT;
 		
-		private string _Diem;
+		private System.Nullable<int> _Diem;
 		
 		private EntityRef<ThongTinCaNhan> _ThongTinCaNhan;
 		
@@ -1025,7 +1025,7 @@ namespace BLL_DAL
     partial void OnMaTSChanged();
     partial void OnMaKTChanging(string value);
     partial void OnMaKTChanged();
-    partial void OnDiemChanging(string value);
+    partial void OnDiemChanging(System.Nullable<int> value);
     partial void OnDiemChanged();
     #endregion
 		
@@ -1079,8 +1079,8 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diem", DbType="VarChar(20)")]
-		public string Diem
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diem", DbType="Int")]
+		public System.Nullable<int> Diem
 		{
 			get
 			{

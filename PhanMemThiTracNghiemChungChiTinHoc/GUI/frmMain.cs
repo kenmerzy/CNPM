@@ -71,6 +71,8 @@ namespace GUI
             btnNopBai.Visible = false;
             lblTitleDiem.Visible = false;
             lblDiem.Visible = false;
+            KyThi kt = cauHoiBLL_DAL.getThoiGianLamBai(maKyThi);
+            lblThoiGianConLai.Text = kt.ThoiGianLamBai.ToString() + ":00";
             if (isNhanVien)
                 loadThongTinCaNhan("TS");
             else
@@ -150,6 +152,11 @@ namespace GUI
             lblTitleDiem.Visible = true;
             lblDiem.Visible = true;
             btnNopBai.Visible = false;
+
+            if (cauHoiBLL_DAL.saveKetQua(maThiSinh, maKyThi, diemSo))
+                MessageBox.Show("Nộp bài thi thành công");
+            else
+                MessageBox.Show("Thí sinh này đã làm bài thi ở kỳ này");
             
         }
 
@@ -368,6 +375,8 @@ namespace GUI
                 
             }
             timer1.Enabled = true;
+            KyThi kt = cauHoiBLL_DAL.getThoiGianLamBai(maKyThi);
+            setThoiGianDemNguoc(int.Parse(kt.ThoiGianLamBai.ToString()), 0);
             btnLamBaiThi.Visible = false;
             btnNopBai.Visible = true;
         }

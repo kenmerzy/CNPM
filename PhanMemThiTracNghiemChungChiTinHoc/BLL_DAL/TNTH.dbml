@@ -47,7 +47,7 @@
     <Type Name="KetQua">
       <Column Name="MaTS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaKT" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Diem" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Diem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="ThongTinCaNhan_KetQua" Member="ThongTinCaNhan" ThisKey="MaTS" OtherKey="MaTS" Type="ThongTinCaNhan" IsForeignKey="true" />
     </Type>
   </Table>

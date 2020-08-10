@@ -53,12 +53,14 @@ namespace GUI
             {
                 tabThi.Dispose();
                 isNhanVien = true;
+                tabQuanLyDotThi.Dispose();
                 tabQuanLyCauHoi.Dispose();
             }
             if (maLoaiTaiKhoan.Equals("TS"))
             {
                 tabDangKyTaiKhoan.Dispose();
                 tabQuanLyCauHoi.Dispose();
+                tabQuanLyDotThi.Dispose();
                 tabQuanLyThiSinh.Dispose();
             }
 
@@ -70,6 +72,10 @@ namespace GUI
             lblNgayThi.Text = DateTime.Now.ToShortDateString();
             loadCboDotThi();
             loadCboLTK();
+            loadDSDT();
+            loadDSKT();
+            enableControls();
+            loadKT_MangayThi();
             btnNopBai.Visible = false;
             lblTitleDiem.Visible = false;
             lblDiem.Visible = false;
@@ -697,7 +703,153 @@ namespace GUI
             loadcontrol(true);
             isThem = false;
         }
+        ///////
+        void loadDSDT()
+        {
+            dtGrid_DSDT.DataSource = cauHoiBLL_DAL.loadDSDotthi();
+        }
+        void loadDSKT()
+        {
+            dtGrid_DSKT.DataSource = cauHoiBLL_DAL.loadDSKyThi();
+        }
+        void enableControls()
+        {
+            txt_DT_Mangaythi.Enabled = false;
+            txt_DT_SL.Enabled = false;
+            dtPicker_NgayThi.Enabled = false;
 
+            txt_KT_DotThi.Enabled = false;
+            txt_KT_MaKT.Enabled = false;
+            txt_KT_Thoigian.Enabled = false;
+            cbo_KT_MaNgayThi.Enabled = false;
+        }
+        void loadKT_MangayThi()
+        {
+
+            cbo_KT_MaNgayThi.DataSource = cauHoiBLL_DAL.loaddotThi();
+            cbo_KT_MaNgayThi.DisplayMember = "MaNgayThi";
+            cbo_KT_MaNgayThi.ValueMember = "MaNgayThi";
+        }
+        private void btn_QLDT_Them_Click(object sender, EventArgs e)
+        {
+            txt_DT_Mangaythi.Enabled = true;
+            txt_DT_Mangaythi.Text = "";
+            txt_DT_SL.Enabled = true;
+            txt_DT_SL.Text = "";
+            dtPicker_NgayThi.Enabled = true;
+
+        }
+
+        private void dtGrid_DSDT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_DT_Mangaythi.Text = dtGrid_DSDT.CurrentRow.Cells[0].Value.ToString();
+
+            dtPicker_NgayThi.Value = DateTime.Parse(dtGrid_DSDT.CurrentRow.Cells[1].Value.ToString());
+            txt_DT_SL.Text = dtGrid_DSDT.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void dtGrid_DSKT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbo_KT_MaNgayThi.Text = dtGrid_DSKT.CurrentRow.Cells[0].Value.ToString();
+            txt_KT_DotThi.Text = dtGrid_DSKT.CurrentRow.Cells[1].Value.ToString();
+            txt_KT_MaKT.Text = dtGrid_DSKT.CurrentRow.Cells[2].Value.ToString();
+            txt_KT_Thoigian.Text = dtGrid_DSKT.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void btn_KT_Them_Click(object sender, EventArgs e)
+        {
+            txt_KT_DotThi.Enabled = true;
+            txt_KT_DotThi.Text = "";
+            txt_KT_MaKT.Enabled = true;
+            txt_KT_MaKT.Text = "";
+            txt_KT_Thoigian.Enabled = true;
+            txt_KT_Thoigian.Text = "";
+            cbo_KT_MaNgayThi.Enabled = true;
+        }
+
+        private void btn_QLDT_Xoa_Click(object sender, EventArgs e)
+        {
+            string madt = dtGrid_DSDT.CurrentRow.Cells[0].Value.ToString();
+            if (cauHoiBLL_DAL.xoaDT(madt) == 1)
+            {
+                MessageBox.Show("Thành công");
+                loadDSDT();
+                loadDSKT();
+
+            }
+            else
+                MessageBox.Show("Thất bại");
+        }
+
+        private void btn_KT_Xoa_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                string makt = dtGrid_DSKT.CurrentRow.Cells[2].Value.ToString();
+                if (cauHoiBLL_DAL.xoaKT(makt) == 1)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    loadKT_MangayThi();
+                }
+                else
+                    MessageBox.Show("Xóa thất bại");
+            }
+        }
+
+        private void btn_QLDT_Sua_Click(object sender, EventArgs e)
+        {
+            txt_DT_SL.Enabled = true;
+            txt_DT_SL.Text = "";
+            dtPicker_NgayThi.Enabled = true;
+        }
+
+        private void btn_QLDT_Luu_Click(object sender, EventArgs e)
+        {
+            string mangaythi = txt_DT_Mangaythi.Text;
+            int sl = int.Parse(txt_DT_SL.Text);
+            if (cauHoiBLL_DAL.suaDT(mangaythi, dtPicker_NgayThi.Value, sl) == 1)
+            {
+                MessageBox.Show("Sửa thành công");
+                loadDSDT();
+            }
+             if (cauHoiBLL_DAL.themDT(mangaythi, dtPicker_NgayThi.Value, sl) == 1)
+            {
+                MessageBox.Show("Thêm thành công ");
+                loadDSDT();
+            }
+          
+        }
+
+        private void btn_KT_Sua_Click(object sender, EventArgs e)
+        {
+            txt_KT_DotThi.Enabled = true;
+            txt_KT_DotThi.Text = "";
+            txt_KT_MaKT.Enabled = true;
+      
+            txt_KT_Thoigian.Text = "";
+            txt_KT_Thoigian.Enabled = true;
+            cbo_KT_MaNgayThi.Enabled = true;
+
+        }
+
+        private void btn_KT_Luu_Click(object sender, EventArgs e)
+        {
+            string makt = txt_KT_MaKT.Text;
+            int thoigianlambai =int.Parse( txt_KT_Thoigian.Text);
+            string madt = cbo_KT_MaNgayThi.SelectedValue.ToString();
+            int dt =int.Parse( txt_KT_DotThi.Text);
+            if (cauHoiBLL_DAL.suaKT(makt, madt,dt,thoigianlambai) == 1)
+            {
+                MessageBox.Show("Sửa thành công");
+                loadDSKT();
+            }
+            if (cauHoiBLL_DAL.themKT(makt,madt,dt,thoigianlambai)== 1)
+            {
+                MessageBox.Show("Thêm thành công ");
+                loadDSKT();
+            }
+        }
 
 
 

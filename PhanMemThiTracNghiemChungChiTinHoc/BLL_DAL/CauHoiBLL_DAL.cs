@@ -246,7 +246,134 @@ namespace BLL_DAL
                      select new { k.MaKT, k.DotThi };
             return kt;
         }
+        //frm quan ly dot thi
+        public IQueryable loadDSDotthi()
+        {
+            var dt = from d in tnth.DotThis select d;
+            return dt;
+        }
+        public IQueryable loadDSKyThi()
+        {
+            var kt = from k in tnth.KyThis select new { k.MaNgayThi, k.ThoiGianLamBai, k.MaKT, k.DotThi };
+            return kt;
 
+        }
+
+
+
+        public int xoaKT(string kt)
+        {
+            KyThi k = tnth.KyThis.Where(t => t.MaKT == kt).FirstOrDefault();
+            if (k != null)
+            {
+                ThongTinCaNhan ttcn = tnth.ThongTinCaNhans.Where(c => c.MaKyThi == k.MaKT).FirstOrDefault();
+                if (ttcn != null)
+                {
+                    tnth.ThongTinCaNhans.DeleteOnSubmit(ttcn);
+                    tnth.SubmitChanges();
+                }
+                tnth.KyThis.DeleteOnSubmit(k);
+                tnth.SubmitChanges();
+                return 1;
+            }
+            else
+                return 2;
+        }
+        public int xoaDT(string madt)
+        {
+            DotThi dt = tnth.DotThis.Where(d => d.MaNgayThi == madt).FirstOrDefault();
+            if (dt != null)
+            {
+                KyThi kt = tnth.KyThis.Where(k => k.MaNgayThi == dt.MaNgayThi).FirstOrDefault();
+                if (kt != null)
+                {
+
+                    ThongTinCaNhan tcn = tnth.ThongTinCaNhans.Where(tc => tc.MaKyThi == kt.MaKT).FirstOrDefault();
+                    if (tcn != null)
+                    {
+                        KetQua k = tnth.KetQuas.Where(kq => kq.MaTS == tcn.MaTS && kq.MaKT == kt.MaKT).FirstOrDefault();
+                        if (k != null)
+                        {
+                            tnth.KetQuas.DeleteOnSubmit(k);
+                            tnth.SubmitChanges();
+                        }
+                        tnth.ThongTinCaNhans.DeleteOnSubmit(tcn);
+                        tnth.SubmitChanges();
+                    }
+                    tnth.KyThis.DeleteOnSubmit(kt);
+                    tnth.SubmitChanges();
+                }
+                tnth.DotThis.DeleteOnSubmit(dt);
+                tnth.SubmitChanges();
+                return 1;
+            }
+            return 0;
+        }
+
+        public int suaDT(string madt, DateTime ngaythi, int sldk)
+        {
+            DotThi dt = tnth.DotThis.Where(d => d.MaNgayThi == madt).FirstOrDefault();
+            if (dt != null)
+            {
+                dt.NgayThi = ngaythi;
+                dt.SoLuongDK = sldk;
+                tnth.SubmitChanges();
+                return 1;
+            }
+            else
+                return 0;
+        }
+        public int themDT(string madt, DateTime ngaythi, int sldk)
+        {
+            //DotThi dt = tnth.DotThis.Where(dot => dot.MaNgayThi == madt).FirstOrDefault();
+            DotThi d = new DotThi();
+            d.MaNgayThi = madt;
+            d.NgayThi = ngaythi;
+            d.SoLuongDK = sldk;
+            //if (dt == null)
+            
+           
+                try
+                {
+                    tnth.DotThis.InsertOnSubmit(d);
+                    tnth.SubmitChanges();
+                    return 1;
+                }
+                catch { return 0; }
+            //}
+            //else
+            //    return 0;
+        }
+
+
+        public int suaKT(string makt, string madt, int dotthi, int thoigian)
+        {
+            KyThi kt = tnth.KyThis.Where(k => k.MaKT == makt).FirstOrDefault();
+            if (kt != null)
+            {
+                kt.MaNgayThi=madt;
+                kt.ThoiGianLamBai = thoigian;
+                kt.DotThi = dotthi;
+                tnth.SubmitChanges();
+                return 1;
+            }
+            else
+                return 0;
+        }
+        public int themKT(string makt,string madt, int dotthi, int thoigian)
+        {
+            KyThi kt = new KyThi();
+            kt.MaKT = makt;
+            kt.MaNgayThi = madt;
+            kt.ThoiGianLamBai = thoigian;
+            kt.DotThi = dotthi;
+            try {
+                tnth.KyThis.InsertOnSubmit(kt);
+                tnth.SubmitChanges();
+                return 1;
+            }
+            catch { return 0; }
+        }
       
     }
 }

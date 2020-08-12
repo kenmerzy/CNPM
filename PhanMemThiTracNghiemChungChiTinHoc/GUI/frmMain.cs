@@ -300,7 +300,8 @@ namespace GUI
             cboDotThi.DataSource = cauHoiBLL_DAL.loaddotThi();
             cboDotThi.DisplayMember = "NgayThi";
             cboDotThi.ValueMember = "MaNgayThi";
-            cboDotThi.SelectedIndex = 0;
+            if(maThiSinh.Equals("TS"))
+                cboDotThi.SelectedIndex = 0;
         }
         //đăng ký
         private void btnDangKy_Click(object sender, EventArgs e)
